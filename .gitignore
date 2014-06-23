@@ -1,0 +1,12 @@
+# Ignore OSX Shit
+*.DS_Store
+
+# Ignore Webstorm stuff
+.idea
+
+# Don't commit components
+/bower_components
+/node_modules
+
+# Don't commit the css folder, we use SASS
+/css/*
