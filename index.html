@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Oh Man, I Have Already Seen It!</title>
+    <meta name="description"
+          content="Never watch an episode twice (or more)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/app.css"/>
+    <script src="bower_components/modernizr/modernizr.js"></script>
+</head>
+
+<body>
+
+<script type="text/x-handlebars" data-template-name="tvshows">
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser.
+                           Please <a href="http://browsehappy.com/">upgrade your
+                                                                    browser</a>
+                           to
+                           improve your experience.</p>
+    <![endif]-->
+
+    <div class="row">
+        <div class="large-12 columns">
+
+            <dl class="sub-nav">
+                <dt>Filter:</dt>
+                <dd class="active">
+                    {{#link-to "tvshows.index" activeClass="active"}}All
+                    ({{countAll}}){{/link-to}}
+                </dd>
+                <dd>
+                    {{#link-to "tvshows.watching"
+                    activeClass="active"}}Currently Watching ({{countWatching}}){{/link-to}}
+                </dd>
+            </dl>
+
+            {{outlet}}
+
+            <div class="row">
+                <div class="large-4 columns">
+                    <div class="row collapse">
+                        <div class="small-10 columns">
+                            {{input type="text" id="new-tvshow"
+                            placeholder="Name of the Show"
+                            value=newShow action="createTvshow"}}
+                        </div>
+                        <div class="small-2 columns">
+                            <a href="#" class="button postfix"
+                            {{action "createTvshow"}}>Add</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="tvshows/index">
+    <table>
+        <thead>
+        <tr>
+            <th>
+                <a href="#" {{action "sortBy" "name:asc"}}>Name</a>
+            </th>
+            <th width="120">Watch Status</th>
+            <th width="150">Currently Watching</th>
+            <th width="300">Controls</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {{#each itemController="tvshow"}}
+        <tr>
+            <td>
+                {{name}}
+            </td>
+            <td>S{{season}} E{{episode}}</td>
+            <td>
+                <div class="switch">
+                    {{input
+                    type="checkbox"
+                    checked=currentlyWatching
+                    id=id
+                    }}
+                    <label {{bindAttr for=id}}></label>
+                </div>
+            </td>
+            <td>
+                <div class="button-bar">
+                    <ul class="button-group">
+                        <li>
+                            <a href="#" class="tiny button"
+                            {{action "decreaseSeason"}}>&lt;&lt;</a>
+                        </li>
+                        <li>
+                            <a href="#" class="tiny button"
+                                    {{action "decreaseEpisode"}}>&lt;</a>
+                        </li>
+                        <li>
+                            <a href="#" class="tiny button"
+                                    {{action "increaseEpisode"}}>&gt;</a>
+                        </li>
+                        <li>
+                            <a href="#" class="tiny button"
+                            {{action "increaseSeason"}}>&gt;&gt;</a>
+                        </li>
+                    </ul>
+
+                    <a href="#"
+                       class="tiny button alert" {{action
+                                                 "removeShow"}}>X</a>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+
+        </tbody>
+    </table>
+</script>
+
+<!--<script
+        src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+<script>window.jQuery ||
+document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="bower_components/handlebars/handlebars.min.js"></script>
+<script src="bower_components/ember/ember.min.js"></script>
+<script src="bower_components/ember-data/ember-data.js"></script>
+<script src="js/libs/localstorage_adapter.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/application.js"></script>
+<script src="js/router.js"></script>
+<script src="js/models/tvshow.js"></script>
+<script src="js/controllers/tvshows_controller.js"></script>
+<script src="js/controllers/tvshow_controller.js"></script>
+</body>
+</html>
