@@ -28,3 +28,13 @@ the data you save in one browser will not be available in another browser).
 - Zurb Foundation and SASS (http://foundation.zurb.com/docs/sass.html) as CSS
  framework
 - Ember.js (http://emberjs.com) as application framework
+
+
+## Development & Contribution
+
+The code is licensed using the MIT license, so feel free to do whatever you 
+want with the code. You can send PRs, report bugs or just make suggestions in
+ the issues.
+ 
+ If you want to develop: Just run ```grunt``` which will trigger a watcher to
+  generate the CSS file out of it. Everything else should be straightforward. 
