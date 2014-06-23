@@ -9,4 +9,4 @@
 /node_modules
 
 # Don't commit the css folder, we use SASS
-/css/*
+#/css/*
