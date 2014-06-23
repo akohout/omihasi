@@ -10,6 +10,16 @@ Check out omihasi and you will never have to say again: Oh man,
 I have already seen it!
 
 
+## Installation
+
+Just fork the repository and use it in on your localhost. I created a vhost 
+for the site, but you can do whatever you want as long as the console does 
+not display any errors :-) 
+
+You don't need any database, it uses the local storage of your browser (so 
+the data you save in one browser will not be available in another browser).
+
+
 ## Used Technologies, Frameworks and Libraries
 
 - HTML5 Boilerplate (http://html5boilerplate.com/) as base 
