@@ -10,11 +10,14 @@ Check out omihasi and you will never have to say again: Oh man,
 I have already seen it!
 
 
-## Installation
+## Installation & Usage
 
 Just fork the repository and use it in on your localhost. I created a vhost 
 for the site, but you can do whatever you want as long as the console does 
-not display any errors :-) 
+not display any errors :-)
+ 
+Alternatively, you can use the "app" from the Github page you can find here 
+http://raven1.github.io/omihasi/
 
 You don't need any database, it uses the local storage of your browser (so 
 the data you save in one browser will not be available in another browser).
