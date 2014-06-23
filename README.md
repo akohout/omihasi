@@ -14,7 +14,9 @@ I have already seen it!
 
 Just fork the repository and use it in on your localhost. I created a vhost 
 for the site, but you can do whatever you want as long as the console does 
-not display any errors :-)
+not display any errors :-) Anyway, you have to create a css file from the 
+SCSS (by running ```grunt```) and install the bower components (```bower 
+install```.
  
 Alternatively, you can use the "app" from the Github page you can find here 
 http://raven1.github.io/omihasi/
